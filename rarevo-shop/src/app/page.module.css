@@ -1,0 +1,8 @@
+/* Page-level wrapper that replaces Tailwind `bg-[#FAFAF7] pb-12` */
+.pageWrapper {
+  background: #000000;
+  background: linear-gradient(90deg, #0c0c0c 60%, #1b1900);
+  background: -webkit-linear-gradient(90deg, #0c0c0c 60%, #1b1900);
+  padding-bottom: 3rem; /* pb-12 */
+  flex: 1;
+}

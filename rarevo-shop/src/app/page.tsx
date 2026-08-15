@@ -1,19 +1,21 @@
-import Header from "@/components/Header";
+"use client";
+
 import CardRow from "@/components/CardRow";
-import { testCards } from "@/lib/testData";
+import { testCardsGlobal } from "@/lib/testData";
+import styles from "./page.module.css";
 
 export default function Home() {
-  const categories = Array.from(new Set(testCards.map((c) => c.category)));
+  const categories = Array.from(new Set(testCardsGlobal.map((c) => c.category)));
 
   return (
     <>
-      <Header />
-      <main className="page">
+      <main className={styles.pageWrapper}>
+        <title>Welcome</title>
         {categories.map((category) => (
           <CardRow
             key={category}
             title={category}
-            cards={testCards.filter((c) => c.category === category)}
+            cards={testCardsGlobal.filter((c) => c.category === category)}
           />
         ))}
       </main>

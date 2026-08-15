@@ -1,0 +1,23 @@
+.page {
+    background: #000000;
+    color: #ffffff;
+    padding: 2rem;
+}
+
+.container1 {
+    padding-left: 2rem;
+}
+
+.header {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+
+}
+
+.paragraph {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
