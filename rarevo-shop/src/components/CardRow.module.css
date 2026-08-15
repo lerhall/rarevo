@@ -1,0 +1,50 @@
+.section {
+  padding: 1.5rem; /* px-6 py-6 */
+}
+
+.title {
+  margin-bottom: 0.75rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.scroll {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.75rem;
+  scrollbar-width: thin;
+  scroll-snap-type: x mandatory;
+}
+
+.card {
+  position: relative;
+  width: 11rem; /* approx w-44 */
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  border-radius: 0.75rem;
+  border: 1px solid #282929;
+  background: #181818;
+  padding: 0.75rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); border-color:#d3cf07;}
+
+.image {
+  margin-bottom: 0.5rem;
+  height: 10rem; /* h-40 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  background: #f3f4f6;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 0.875rem; font-weight: 600; color: #ffffff; }
+.meta { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 0.75rem; color: #6b7280; }
+.price { margin-top: 0.25rem; font-family: monospace; font-size: 0.875rem; color: #ffffff; }
