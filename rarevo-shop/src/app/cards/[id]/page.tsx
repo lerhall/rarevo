@@ -1,12 +1,11 @@
 'use client'
 
-
 import { use } from 'react'
 import styles from './page.module.css'
 import { testCardsGlobal } from '@/lib/testData'
 import { testCardsUsers } from '@/lib/testData'
 import { testSellers } from '@/lib/testData'
-
+import Link from 'next/link'
 
 export default function CardPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
@@ -19,6 +18,7 @@ export default function CardPage({ params }: { params: Promise<{ id: string }> }
   );
 }
 
+
 function searchMultipleArrays(arrays: any[][], id: number) {
   for (const array of arrays) {
     const found = array.find((item) => item.id === id);
@@ -28,10 +28,12 @@ function searchMultipleArrays(arrays: any[][], id: number) {
   }
 }
 
+
 type AuthEntry = {
   auth: string;
   desc: string;
 }
+
 
 function AuthText(card: any, seller: any) : AuthEntry[] {
   return [
@@ -41,7 +43,6 @@ function AuthText(card: any, seller: any) : AuthEntry[] {
   {auth: "Shipping", desc: "Insured tracked: TBD"},
   ]
 }
-
 
 
 function BigCard({ card, seller }: { card: any; seller: any }) {
@@ -68,7 +69,9 @@ function BigCard({ card, seller }: { card: any; seller: any }) {
           <p className={styles.price}>£{card?.price?.toFixed(2)}</p>
           <div className={styles.buttonRow}>
             <div className={styles.bidButton}>Place bid</div>
-            <div className={styles.buyNowButton}>Buy now</div>
+            <Link href={`/buy/${card?.id}`} className={styles.buyNowLink}>
+              <div className={styles.buyNowButton}>Buy now</div>
+            </Link>
           </div>
         </div>
         <div className={styles.sellerRow}>
